@@ -1,0 +1,107 @@
+<div id="contenido">
+    <header>
+        <ul>
+            <li id="sneakers">sneakers</li>
+            <img id="imgNav" (click)="navCell()" src="../assets/icon-menu.svg" alt="menu">
+            <div *ngIf="NavCellPhone" id="divHamb">
+                <div>
+                    <img (click)="CerrarNav()" src="../assets/icon-close.svg" alt="close">
+
+                    <li>Collection</li>
+                    <li>Men</li>
+                    <li>Women</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                </div>
+            </div>
+            <div id="navPc">
+                <li>Collection</li>
+                <li>Men</li>
+                <li>Women</li>
+                <li>About</li>
+                <li>Contact</li>
+            </div>
+            <li class="imgHeader"><img class="IMG1" src="../assets/image-avatar.png" alt="Avatar"></li>
+            <li class="imgHeader" (click)="mostrarTarjetaFuc()"><img class="IMG2" src="../assets/icon-cart.svg" alt="Carrito">
+                <span *ngIf="notificacion">{{cantidadProducto}}</span>
+            </li>
+            <div *ngIf="mostrarTarjeta" id="tarjeta">
+                <h1 class="cart">Cart</h1>
+                <div>
+                    <div *ngIf="existenProductos">
+                        <img class="imgProductoCart" src="../assets/image-product-1-thumbnail.jpg" alt="Producto">
+                        <div id="productcarttxt">
+                            <h1>Fall Limited Edition Sneakers</h1>
+                            <div>
+                                <h1>$125.00 x</h1>
+                                <h1 class="numCanti">{{cantidadProducto}}</h1>
+                                <h1 class="total">${{valorProductos}}.00</h1>
+                            </div>
+                            <img (click)="eliminar()" id="eliminar" src="../assets/icon-delete.svg" alt="Eliminar">
+
+                        </div>
+                        <div id="butonCart">Checkout</div>
+                    </div>
+                    <div *ngIf="existenProductos===false">
+                        <h1 class="empty">Your cart is empty.</h1>
+                    </div>
+                </div>
+            </div>
+        </ul>
+    </header>
+
+    <body>
+        <div id="seccionImagenes">
+            <img id="imagenSelect" [ngStyle]="{'display':none}" (click)="MostrarPreview()" src="{{imgSelect}}" alt="imagen Seleccionada">
+            <div id="contenedorIMG">
+                <img [ngStyle]="{'filter':styleSelect1img1 ,'outline':styleSelect2img1}" (click)="img1()" src="../assets/image-product-1-thumbnail.jpg" alt="Producto 1">
+                <img [ngStyle]="{'filter':styleSelect1img2 ,'outline':styleSelect2img2}" (click)="img2()" src="../assets/image-product-2-thumbnail.jpg" alt="Producto 2">
+                <img [ngStyle]="{'filter':styleSelect1img3 ,'outline':styleSelect2img3}" (click)="img3()" src="../assets/image-product-3-thumbnail.jpg" alt="Producto 3">
+                <img [ngStyle]="{'filter':styleSelect1img4 ,'outline':styleSelect2img4}" (click)="img4()" src="../assets/image-product-4-thumbnail.jpg" alt="Producto 4">
+            </div>
+            <div id="nextBackCelphone">
+                <img [ngStyle]="{'display':none}" (click)="next()" class="next" src="../assets/icon-next.svg" alt="next">
+                <img [ngStyle]="{'display':none}" (click)="back()" class="back" src="../assets/icon-previous.svg" alt="back">
+            </div>
+        </div>
+        <div id="SeccionTxt">
+            <h1 id="txt1"> Sneaker Company</h1>
+            <h1 id="txt2">Fall Limited Edition Sneakers</h1>
+            <p id="txt3">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.
+            </p>
+            <div id="div1">
+                <h1 id="div1H1">$125.00</h1>
+                <h1 id="div1H2">50%</h1>
+            </div>
+            <h1 id="txt4">$250.00</h1>
+            <div id="div2">
+                <div id="cantidad">
+                    <img (click)="menos()" class="cantidadMENOS can" src="../assets/icon-minus.svg" alt="Menos">
+                    <h1 class="cantidadNUM can">{{numero}}</h1>
+                    <img (click)="mas()" class="cantidadMAX can" src="../assets/icon-plus.svg" alt="Mas">
+                </div>
+                <div (click)="addCart()" id="boton">
+                    <img src="../assets/icon-cart.svg" alt="Carrito">
+                    <h1>Add to cart</h1>
+                </div>
+            </div>
+        </div>
+        <div id="preview" *ngIf="MostrarP">
+            <div>
+                <div id="previewTOP">
+                    <div> <img class="imgpreview" [ngStyle]="{'display':none}" src="{{imgSelect}}" alt="Img product">
+                    </div>
+                    <img (click)="CerrarPreview()" class="close" src="../assets/icon-close.svg" alt="close">
+                    <img [ngStyle]="{'display':none}" (click)="next()" class="next" src="../assets/icon-next.svg" alt="next">
+                    <img [ngStyle]="{'display':none}" (click)="back()" class="back" src="../assets/icon-previous.svg" alt="back">
+                </div>
+                <div id="contenedorIMG" class="contenedorIMG">
+                    <img [ngStyle]="{'filter':styleSelect1img1 ,'outline':styleSelect2img1}" (click)="img1()" src="../assets/image-product-1-thumbnail.jpg" alt="Producto 1">
+                    <img [ngStyle]="{'filter':styleSelect1img2 ,'outline':styleSelect2img2}" (click)="img2()" src="../assets/image-product-2-thumbnail.jpg" alt="Producto 2">
+                    <img [ngStyle]="{'filter':styleSelect1img3 ,'outline':styleSelect2img3}" (click)="img3()" src="../assets/image-product-3-thumbnail.jpg" alt="Producto 3">
+                    <img [ngStyle]="{'filter':styleSelect1img4 ,'outline':styleSelect2img4}" (click)="img4()" src="../assets/image-product-4-thumbnail.jpg" alt="Producto 4">
+                </div>
+            </div>
+        </div>
+    </body>
+</div>
