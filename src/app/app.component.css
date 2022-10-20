@@ -10,10 +10,7 @@ header {
     box-shadow: 0px 2.5px 0px 0px hsl(223, 64%, 98%);
 }
 
-body {
-    width: 100%;
-    margin-top: 80px;
-}
+
 
 header ul li:hover {
     box-shadow: 0px 3px 0px 0px hsl(14.1, 100%, 50%);
@@ -287,6 +284,9 @@ header ul li:hover {
 /****************mostly fluid****************/
 
 @media (min-width: 360px) {
+    main {
+        width: 100%;
+    }
     #contenido {
         width: 100%;
         margin-left: 0%;
@@ -347,32 +347,23 @@ header ul li:hover {
     #navPc {
         display: none;
     }
-    #imagenSelect {
-        width: 105%;
-        margin-left: -5%;
-        margin-bottom: 20px;
+    #imagenSelect {width: 100%;
         border-radius: 0;
         cursor: pointer;
-        height: 300px;
-        margin-top: -67px;
         animation-name: AnimationPreview;
         animation-duration: 0.5s;
+        height: 100%;
     }
-    #seccionImagenes {
-        width: 100%;
+    #seccionImagenes {width: 100%;
         text-align: center;
-        float: none;
-        height: 70%;
-        position: absolute;
-        left: 0;
+        float: none;position: relative;
     }
     #contenedorIMG img {
         display: none;
     }
-    #SeccionTxt {
-        width: 100%;
+    #SeccionTxt {width: 100%;
         float: left;
-        margin-top: 75%;
+        margin-top: 1rem;
     }
     ul {
         width: 88%;
@@ -419,7 +410,6 @@ header ul li:hover {
     #boton {
         background-color: hsl(14.1, 100%, 50%);
         margin-top: 22px;
-        position: absolute;
         color: white;
         border-radius: 8px;
         box-shadow: 0px 7px 20px -7px hsl(14.1, 100%, 50%);
@@ -444,38 +434,34 @@ header ul li:hover {
     #nextBackCelphone {
         display: block;
     }
-    .next {
-        width: 25px;
+    .next {width: 25px;
         background-color: #ffffffb0;
         border-radius: 85px;
-        padding-top: 12px;
-        padding-right: 14px;
-        padding-bottom: 11px;
-        padding-left: 19px;
-        margin-top: -206px;
         position: absolute;
         cursor: pointer;
-        margin-left: 79%;
+        right: 1rem;
+        top: 50%;
+        padding: 12px 14px 11px 19px;
     }
-    .back {
-        width: 25px;
+    .back {width: 25px;
         background-color: #ffffffb0;
         border-radius: 85px;
-        padding-top: 10px;
-        padding-right: 21px;
-        padding-bottom: 11px;
-        padding-left: 14px;
-        margin-top: -208px;
         position: absolute;
-        margin-left: 3%;
         cursor: pointer;
+        padding: 12px 14px 11px 19px;
+        left: 1rem;
+        top: 50%;
+
     }
 }
 
-@media (min-width: 1281px) {
-    #contenido {
-        width: 80%;
-        margin-left: 9%;
+@media (min-width: 1024px) {
+    main {
+        width: 100%;
+        margin-top: 80px;
+    }
+    #contenido {width: 90%;
+        margin: 0 5%;
     }
     #imgNav {
         display: none;
@@ -506,7 +492,7 @@ header ul li:hover {
     }
     #imagenSelect {
         width: 348px;
-        margin-left: 122px;
+        margin-left: 0;
         margin-bottom: 20px;
         border-radius: 15px;
         animation-name: AnimationIMG;
@@ -515,17 +501,20 @@ header ul li:hover {
         height: auto;
         margin-top: auto;
     }
-    #seccionImagenes {
-        width: 50%;
-        text-align: center;
+    #contenedorIMG{
+        display: flex;
+column-gap: 1rem;
+    }
+    #seccionImagenes {width: 50%;
         float: left;
         height: auto;
         position: relative;
-        left: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     #contenedorIMG img {
         width: 72px;
-        margin-left: 20px;
         border-radius: 8px;
         cursor: pointer;
         display: inline-block;
@@ -537,7 +526,7 @@ header ul li:hover {
     }
     ul {
         width: 100%;
-        margin-bottom: -1px;
+        margin-bottom: -1px;padding: 0;
     }
     #txt2 {
         font-size: 36px;
@@ -545,7 +534,7 @@ header ul li:hover {
     }
     #txt3 {
         color: hsl(219, 9%, 45%);
-        width: auto;
+        width: auto;display: block;
     }
     #txt4 {
         display: block;
@@ -631,4 +620,9 @@ header ul li:hover {
         margin-left: -32px;
         cursor: pointer;
     }
+}
+.attribution{
+    width: 100%;
+text-align: center;
+margin-top: 1rem;
 }
