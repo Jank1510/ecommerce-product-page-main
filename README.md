@@ -1,5 +1,5 @@
 # EcommerceProductPageMain
-EcommerceProductPageMain CHALLENGE
+EcommerceProductPageMain finalizado ☑
 
 # Project Link :
 https://jank1510.github.io/ecommerce-product-page-main/
